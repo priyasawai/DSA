@@ -1,3 +1,4 @@
+//brute force solution:
 class HelloWorld {
     public static void main(String[] args) {
         int arr[]={8,3,4,5,1};
