@@ -80,6 +80,22 @@ class SinglyLinkedList {
         temp.next=newNode;
     }
     }
+    
+    public int length()
+    {
+        if(head==null)
+        {
+            return 0;
+        }
+        int count=0;
+        Node curr=head;
+        while(curr!=null)
+        {
+            count++;
+            curr=curr.next;
+        }
+        return count;
+    }
     public void print()
     {
        if(head==null)
@@ -111,5 +127,6 @@ class SinglyLinkedList {
       ll.print();
       ll.position(5,80);
       ll.print();
+      System.out.println(ll.length());
     }
 }
