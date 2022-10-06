@@ -19,7 +19,7 @@ class HelloWorld {
     }
 }
 
-// palindrom string:
+// palindrom string by using recursion:
 class HelloWorld {
 public static boolean isPalindrome(String str,int l,int h)
    {
@@ -35,6 +35,30 @@ public static boolean isPalindrome(String str,int l,int h)
    }   
  public static void main(String[] args) {
  String  str="silent";
+ boolean isPalindrome= isPalindrome(str,0,str.length()-1);
+        if(isPalindrome)
+        {
+            System.out.println("String is Palindrome");
+        }
+        else
+        System.out.println("String is  not Palindrome");
+    }
+}
+
+//palindrome string by using two pointer technique:
+class HelloWorld {
+public static boolean isPalindrome(String str,int l,int h)
+   {
+    if(str.charAt(l)!=str.charAt(h))
+    {
+      return false;   
+    }
+    l++;
+    h--;
+    return true;
+   }
+ public static void main(String[] args) {
+ String  str="abba";
  boolean isPalindrome= isPalindrome(str,0,str.length()-1);
         if(isPalindrome)
         {
