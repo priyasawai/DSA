@@ -18,3 +18,29 @@ class HelloWorld {
         }
     }
 }
+
+// palindrom string:
+class HelloWorld {
+public static boolean isPalindrome(String str,int l,int h)
+   {
+     if(l>=h)
+     {
+         return true;
+     }
+     if(str.charAt(l)!=str.charAt(h))
+     {
+         return false;
+     }
+     return isPalindrome(str,l+1,h-1);
+   }   
+ public static void main(String[] args) {
+ String  str="silent";
+ boolean isPalindrome= isPalindrome(str,0,str.length()-1);
+        if(isPalindrome)
+        {
+            System.out.println("String is Palindrome");
+        }
+        else
+        System.out.println("String is  not Palindrome");
+    }
+}
