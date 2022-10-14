@@ -112,3 +112,93 @@ class HelloWorld {
        System.out.println(res);
     }
 }
+
+
+class LinkList{
+    Node head;
+    class Node
+    {
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+        public void push(int data)
+        {
+            Node newNode=new Node(data);
+            newNode.next=head;
+            head=newNode;
+        }
+    
+        public void print()
+        {
+            Node temp=head;
+            while(temp!=null)
+            {
+                System.out.print(temp.data +"=>");
+                temp=temp.next;
+            }
+            System.out.println("Null");
+        }
+    
+       public void middleNode()
+       {
+           Node slow=head;
+           Node fast=head;
+           while(fast!=null && fast.next!=null)
+           {
+               fast=fast.next.next;
+               slow=slow.next;
+           }
+           System.out.print(slow.data);
+       }
+       
+       public boolean containsloop()
+       {
+           Node slow=head;
+           Node fast=head;
+           while(fast!=null && fast.next!=null)
+           {
+               slow=slow.next;
+               fast=fast.next.next;
+               if(slow==fast)
+              {
+                return true;
+              }
+           }
+           return false;
+       }
+       public void createLoopInLinkList()
+       {
+           Node first=new Node(1);
+           Node second=new Node(2);
+           Node third=new Node(3);
+           Node fourth=new Node(4);
+           Node fifth=new Node(6);
+           Node sixth=new Node(7);
+           
+           head=first;
+           first.next=second;
+           second.next=third;
+           third.next=fourth;
+           fourth.next=fifth;
+           fifth.next=sixth;
+           sixth.next=third;
+       }
+       
+       
+    public static void main(String[] args) {
+        LinkList l=new LinkList();
+        // l.push(34);
+        // l.push(33);
+        // l.push(37);
+        // l.push(32);
+        // l.push(31);
+        // l.print();
+        // l.middleNode();
+        l.createLoopInLinkList();
+        System.out.println(l.containsloop());
+    }
+}
