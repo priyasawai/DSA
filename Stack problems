@@ -84,3 +84,31 @@ public class Main
        System.out.println(isValid(s));
 	}
 }
+
+// remove adjacent dublicate in String:
+import java.util.*;
+class HelloWorld {
+    public static String removeAdjacentDub(String s)
+    {
+        Stack<Character> st=new Stack<Character>();
+        StringBuilder sb=new StringBuilder();
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            if(st.isEmpty() || st.peek()!=ch) st.push(ch);
+            else
+            st.pop();
+        }
+        for(char c:st)
+        {
+          sb.append(c);  
+          //System.out.println(c);
+        }
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+        String str="abbaca";
+       String res= removeAdjacentDub(str);
+       System.out.println(res);
+    }
+}
