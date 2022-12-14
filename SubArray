@@ -61,3 +61,37 @@ class HelloWorld {
       System.out.println(maxSum);
     }
 }
+
+//find indexes of subarraySum:
+class HelloWorld {
+    public static void maxSumSubarrayindex(int []arr,int n)
+    {
+        int s=0,start=0,end=0;
+        int currSum=0;
+    int maxSum=0;
+    for(int i=0;i<n;i++)
+    {
+        currSum +=arr[i];
+    
+    if(currSum>maxSum)
+    {
+        maxSum=currSum;
+        start=s;
+        end=i;
+      }
+      
+      if(currSum<0)
+      {
+          currSum=0;
+          s=i+1;
+      }
+     }
+      System.out.println("starting index "+start +" \n");
+      System.out.println("starting index " +end);
+    }
+    public static void main(String[] args) {
+    int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3 };
+    int n=arr.length;
+    maxSumSubarrayindex(arr,n);
+    }
+}
