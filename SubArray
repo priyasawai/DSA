@@ -14,7 +14,7 @@ class HelloWorld {
     }
 }
 
-//array sum:
+//array sum:complexity n2
 class HelloWorld {
     public static void main(String[] args) {
     int []arr={-5,4,6,-3,4,-1};
@@ -33,5 +33,31 @@ class HelloWorld {
         }
     }
     System.out.println(maxSum);
+    }
+}
+
+//maximum sum in contigeneous array
+kadanes algo:o(n)
+class HelloWorld {
+    public static void main(String[] args) {
+    int []arr={5,-4,-2,6,-1};
+    int n=arr.length;
+    int currSum=0;
+    int maxSum=0;
+    for(int i=0;i<n;i++)
+    {
+        currSum +=arr[i];
+    
+    if(currSum>maxSum)
+    {
+        maxSum=currSum;
+      }
+      
+      if(currSum<0)
+      {
+          currSum=0;
+      }
+     }
+      System.out.println(maxSum);
     }
 }
