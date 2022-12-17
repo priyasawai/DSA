@@ -29,3 +29,20 @@ class HelloWorld {
        System.out.println(factorial(n));
     }
 }
+
+// In case of long number:
+class HelloWorld {
+    public static long factorial(int n)
+    {
+       long fact=1;
+       for(long i=n;i>0;i--)
+       {
+           fact =fact*i;
+       }
+       return fact;
+    }
+    public static void main(String[] args) {
+        int n=20;
+       System.out.println(factorial(n));
+    }
+}
