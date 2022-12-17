@@ -69,3 +69,24 @@ class HelloWorld {
          System.out.println(reverseNo(n));
     }
 }
+
+//palindrom string
+class HelloWorld {
+    public static boolean palindrom(String str,int l,int h)
+    {
+        if(l>=h)
+        {
+            return true;
+        }
+         if(str.charAt(l)!=str.charAt(h))
+         {
+             return false;
+         }
+         return palindrom(str,l+1,h-1);
+        }
+    public static void main(String[] args) {
+        String str="maam";
+        int l=0,h=str.length()-1;
+        System.out.println(palindrom(str,l,h));
+    }
+}
