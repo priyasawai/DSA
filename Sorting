@@ -1,0 +1,53 @@
+//Merge Sort
+public static void merge(int []arr,int l,int mid,int h)
+    {
+        int m=mid-l+1;
+        int n=h-mid;
+        int []a1=new int[m];
+        int []a2=new int[n];
+        for(int i=0;i<m;i++)
+        a1[i]=arr[l+i];
+        for(int j=0;j<n;j++)
+          a2[j]=arr[mid+1+j];    
+          
+        int i=0,j=0,k=l;
+        while(i<m && j<n)
+        {
+            if(a1[i]<=a2[j])
+            {
+                arr[k++]=a1[i++];
+            }
+            else
+            {
+                arr[k++]=a2[j++];
+            }
+        }
+        
+        while(i<m)
+        {
+            arr[k++]=a1[i++];
+        }
+        
+        while(j<n)
+        {
+            arr[k++]=a2[j++];
+        }
+    }
+    public static void divide(int []arr,int l,int h)
+    {
+        if(l<h)
+        {
+            int mid=l+(h-l)/2;
+            divide(arr,l,mid);
+            divide(arr,mid+1,h);
+            merge(arr,l,mid,h);
+        }
+    }
+    public static void main(String[] args) {
+        int []arr={3,2,5,7,6,4,9,8};
+        int n=arr.length;
+        divide(arr,0,n-1);
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]);
+        }
