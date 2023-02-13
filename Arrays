@@ -40,3 +40,38 @@ class HelloWorld {
         System.out.println(missingEle(nums));
     }
 }
+
+
+//union of two arrays:
+import java.util.*;
+class HelloWorld {
+    public static ArrayList<Integer> printUnion(int []arr1,int []arr2,int n,int m)
+    {
+      Set<Integer> s=new TreeSet<>();   
+      for(int i:arr1)
+      {
+          s.add(i);
+      }
+      for(int i:arr2)
+      {
+          s.add(i);
+      }
+      ArrayList<Integer>list=new ArrayList<>();
+      for(int i:s)
+      {
+          list.add(i);
+      }
+      return list;
+    }
+    public static void main(String[] args) {
+     int arr1[] = { 1, 2, 4, 5, 6 };
+     int arr2[] = { 2, 3, 5, 7 };
+     int n=arr1.length;
+     int m=arr2.length;
+     ArrayList<Integer> arr=printUnion(arr1,arr2,n,m);
+     for(int j:arr)
+     {
+        System.out.println(j); 
+     }
+    }
+}
